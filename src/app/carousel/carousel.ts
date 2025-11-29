@@ -29,7 +29,7 @@ description: 'Brighten, smooth, and nourish — Pich Pisey Brightening Cream hel
 ,  gradient: 'linear-gradient(to bottom right, rgba(139, 92, 246, 0.4), rgba(168, 85, 247, 0.4))'
     },
     {
-      image: '/cover.jpg',
+      image: 'https://scontent.fpnh9-2.fna.fbcdn.net/v/t39.30808-6/487812978_122197528916057995_3089300984469868347_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeE_-RLi18_0xodwGKm8Llf-Duzsf1b_-3AO7Ox_Vv_7cCTs_STQj7tBIvzF7ersvbYxSZU0jQMRZwkMXF591N9f&_nc_ohc=icQYF_RqWM4Q7kNvwEFFExV&_nc_oc=Adkdli9x0ST44CFhrmf3yIFbZKhLvzzAvnY0n0zrj-MxZCXLOORIDxxlaeZf66Tmjoc&_nc_zt=23&_nc_ht=scontent.fpnh9-2.fna&_nc_gid=0cQH6mcS00_tOSvbvWb0Ow&oh=00_AfgniWunz8L7Bef4Ev1yXOTgcEVpcQHLnOr7s9uthlmiHg&oe=6930F82B',
       title: 'Tech Haven',
       description: 'Immerse yourself in the cutting edge of technology and innovation.',
       gradient: 'linear-gradient(to bottom right, rgba(217, 70, 239, 0.4), rgba(236, 72, 153, 0.4))'

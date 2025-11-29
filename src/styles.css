@@ -2,3 +2,9 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+nav a.active {
+  color: #eb2fe1; /* highlight color */
+  text-decoration: underline;
+  text-underline-offset: 6px; /* make underline lower */
+  font-weight: 600;
+}
