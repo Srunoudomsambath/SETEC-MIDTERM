@@ -301,7 +301,7 @@ form textarea {
     background: rgba(255, 255, 255, 0.1);
 backdrop-filter: blur(20px);
       box-sizing: border-box;
-  border-left: 4px solid #ff6b17;
+  border-left: 4px solid #c42fa6;
 }
 
 .dot {
