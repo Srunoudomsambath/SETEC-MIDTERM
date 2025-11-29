@@ -1,0 +1,211 @@
+.testimonials-section {
+  padding: 80px 20px;
+  min-height: 100vh;
+}
+.container { 
+    max-width: 1200px;
+     margin: 0 auto; }
+.main-title, .subtitle { 
+    font-family: 'Georgia', serif; font-size: 48px; font-weight: 500; text-align: center; color: #2c2c2c; margin: 0 0 10px 0; }
+.subtitle { margin-bottom: 20px; }
+.description { text-align: center; color: #999; font-size: 16px; margin: 0 auto 80px auto; max-width: 600px; }
+.testimonials-container {
+  position: relative;
+  height: 600px; /* more vertical space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.testimonial-card {
+  position: absolute;
+  width: 1340px; /* fixed width for all cards */
+  border-radius: 20px;
+  backdrop-filter: blur(15px); /* blur the background behind */
+  -webkit-backdrop-filter: blur(15px); /* for Safari */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* optional glass border */
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+
+.testimonial-card:not(.active) {
+  cursor: pointer;
+  filter: brightness(0.9);
+}
+.testimonial-card.active {
+  cursor: default;
+}
+.card-content { 
+    display: flex; 
+    padding: 40px; 
+    gap: 40px; }
+.customer-image { 
+    width: 600px; 
+    height: 540px; 
+    object-fit: cover;
+     border-radius: 15px; 
+    flex-shrink: 0; }
+.testimonial-info { 
+    flex: 1; display: flex; flex-direction: column; }
+.header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.customer-name { 
+    font-size: 24px; 
+    font-weight: 600; 
+    margin: 0 0 5px 0; 
+    color: #c17ddc; }
+.review-date { font-size: 14px; color: #999; margin: 0; }
+.rating { display: flex; gap: 2px; }
+.star { font-size: 18px; }
+.review-text { color: #888; line-height: 1.8; font-size: 25px; margin: 0 0 30px 0; flex: 1; }
+
+.audio-player { display: flex; align-items: center; gap: 15px; padding: 15px; border-radius: 10px; }
+.play-btn { width: 40px; height: 40px; border-radius: 50%; background: #2c2c2c; color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; transition: background 0.3s; }
+.play-btn:hover { background: #000; }
+.waveform { display: flex; align-items: center; gap: 3px; flex: 1; height: 40px; }
+.wave-bar { width: 3px; background: #ddd; border-radius: 2px; transition: all 0.3s; }
+.wave-bar:nth-child(1) { height: 20px; }
+.wave-bar:nth-child(2) { height: 30px; }
+.wave-bar:nth-child(3) { height: 25px; }
+.wave-bar:nth-child(4) { height: 35px; }
+.wave-bar:nth-child(5) { height: 28px; }
+.wave-bar:nth-child(6) { height: 32px; }
+.wave-bar:nth-child(7) { height: 22px; }
+.wave-bar:nth-child(8) { height: 38px; }
+.wave-bar:nth-child(9) { height: 26px; }
+.wave-bar:nth-child(10) { height: 30px; }
+.wave-bar:nth-child(11) { height: 24px; }
+.wave-bar:nth-child(12) { height: 33px; }
+.wave-bar:nth-child(13) { height: 28px; }
+.wave-bar:nth-child(14) { height: 20px; }
+.wave-bar:nth-child(15) { height: 25px; }
+.audio-time { font-size: 14px; color: #666; white-space: nowrap; }
+.navigation-dots { display: flex; justify-content: center; gap: 10px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #ddd; border: none; cursor: pointer; padding: 0; transition: all 0.3s; }
+.dot.active { background: #2c2c2c; width: 30px; border-radius: 5px; }
+
+@media (max-width: 768px) {
+  .testimonials-section { padding: 40px 15px; }
+  .main-title, .subtitle { font-size: 32px; }
+  .testimonial-card { width: 90%; }
+  .card-content { flex-direction: column; padding: 30px; gap: 20px; }
+  .customer-image { width: 100%; height: 300px; }
+}
+
+
+
+
+.button {
+  position: relative;
+  border: none;
+  background: transparent;
+  --stroke-color: #ffffff7c;
+  --ani-color: rgba(95, 3, 244, 0);
+  --color-gar: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--stroke-color);
+  cursor: pointer;
+  font-family: "Poppins";
+  font-size: 40px;
+  font-weight: 500;
+}
+
+
+.front-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Always full width */
+  background: var(--color-gar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
+  overflow: hidden;
+  animation: ani 8s linear infinite; /* Keep animating */
+  border-bottom: 2px solid transparent;
+}
+
+/* Optional: keep hover effect for stroke/border */
+.button:hover .front-text {
+  -webkit-text-stroke: 1px var(--ani-color);
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 400%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.model-intro {
+  
+  text-align: center;
+  margin: 60px 0 40px 0;
+  padding: 0 20px;
+  color: white;
+}
+
+.model-intro h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #5c039b, #cb9af9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.model-intro p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.btn-shine {
+  display: inline-block;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  background: linear-gradient(90deg, #9f9f9f 0%, #fff 50%, #868686 100%);
+  background-size: 200% auto;  /* Double width for smooth sweep */
+  background-position: -200% 0;  /* Start from left outside */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 8s infinite linear;
+
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 10px;
+  white-space: normal;
+  max-width: 700px;  /* Constrain width to match your design */
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center everything */
+  gap: 20px;            /* space between button and paragraph */
+  width: 100%;          /* make full width */
+}
+ 

@@ -1,0 +1,79 @@
+  /* Reset & basic styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Navbar container */
+    .container {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 9999px;
+      padding: 16px 32px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+      z-index: 50;
+    }
+
+    /* Logo */
+ .logo img {
+  height: 64px; /* bigger logo */
+  width: auto;  /* keep aspect ratio */
+  display: block; /* optional, ensures no extra inline spacing */
+}
+
+    /* Menu */
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      font-weight: 500;
+      color: rgba(208, 117, 253, 0.8);
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #eb2fe1; /* primary color */
+    }
+
+    /* Right actions */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Buttons */
+.actions button {
+  display: flex;           /* make button a flex container */
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  padding: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+    .actions button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }

@@ -1,0 +1,398 @@
+/* Host to prevent overflow */
+:host {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background container */
+.background-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: #000; /* BACK TO NORMAL DARK */
+  pointer-events: none;
+}
+
+/* Light purple gradients */
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(109, 40, 217, 0.2),
+    rgba(112, 26, 117, 0.2),
+    rgba(162, 28, 175, 0.2)
+  );
+}
+
+/* Soft blurred orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(96px);
+}
+
+.orb-1 {
+  top: 25%;
+  left: 25%;
+  width: 384px;
+  height: 384px;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.orb-2 {
+  bottom: 25%;
+  right: 25%;
+  width: 384px;
+  height: 384px;
+  background: rgba(217, 70, 239, 0.1);
+}
+
+@media (max-width: 640px) {
+  .orb-1, .orb-2 {
+    width: 192px;
+    height: 192px;
+  }
+}
+
+.contact-page {
+  min-height: 100vh;
+  margin-top: 80px;
+  
+}
+
+/* -----------------------------------------------------
+   HERO SECTION
+------------------------------------------------------ */
+.contact-hero .hero-content {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: #eef2ff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  color: #891cd6;
+  font-size: 14px;
+    font-weight: 600;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(20px);
+      box-sizing: border-box;
+      transition: all 0.5s ease-in-out;
+}
+
+
+.tag-icon {
+  width: 18px;
+  margin-right: 6px;
+}
+
+.contact-hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 14px;
+}
+
+.contact-hero p {
+  color: #555;
+  font-size: 18px;
+}
+
+/* Spacing */
+.section-spacing {
+  margin: 120px 0;
+}
+
+/* -----------------------------------------------------
+   CONTACT CARDS
+------------------------------------------------------ */
+.card-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.contact-card {
+   background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(20px);
+      box-sizing: border-box;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #fff4;
+  text-align: left;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.icon-box img {
+  width: 22px;
+}
+
+.orange {
+  background: rgba(255, 115, 40, 0.9);
+}
+
+.indigo {
+  background: rgba(60, 80, 200, 0.9);
+}
+
+.contact-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.contact-text {
+  font-weight: 600;
+}
+
+.orange-text {
+  color: #ff6b17;
+}
+.indigo-text {
+  color: #30328e;
+}
+
+/* -----------------------------------------------------
+   FORM SECTION
+------------------------------------------------------ */
+.contact-form-section {
+  margin: 140px 0;
+}
+.form-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* Make the image box height equal to form box height */
+.form-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-illustration img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers content vertically if box has fixed height */
+  align-items: stretch;    /* makes inputs full width */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-sizing: border-box;
+  padding: 32px;           /* space between border and content */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.form-box h2 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.form-box p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+  display: block;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #ff6b17;
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* -----------------------------------------------------
+   FAQ
+------------------------------------------------------ */
+.faq-section {
+  margin: 120px 0;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-header h2 {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.faq-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.faq-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.faq-item.active {
+    background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(20px);
+      box-sizing: border-box;
+  border-left: 4px solid #ff6b17;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #30328e;
+  border-radius: 50%;
+}
+
+.faq-answer {
+    background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(20px);
+      box-sizing: border-box;
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid #fff5;
+}
+
+.faq-answer h3 {
+  color: #ff6b17;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+/* HERO SECTION */
+.contact-hero h1 {
+  color: #d7d6d6; /* soft white */
+}
+
+.contact-hero p {
+  color: #d7d6d6; /* softer off-white */
+}
+
+.tag {
+  color: #d7d6d6; /* tag text soft white */
+}
+
+/* CONTACT CARDS */
+.contact-card h3 {
+  color: #d7d6d6; /* headings soft white */
+}
+
+.contact-card p {
+  color: #d7d6d6; /* description text softer white */
+}
+
+.contact-text.orange-text {
+  color: #ffb86c; /* softer orange for contrast */
+}
+
+.contact-text.indigo-text {
+  color: #9ab4f8; /* softer blue for contrast */
+}
+
+/* FORM SECTION */
+.form-box h2 {
+  color: #d7d6d6; /* title soft white */
+}
+
+.form-box p {
+  color: #d7d6d6; /* description soft white */
+}
+
+.form-group label {
+  color: #d7d6d6; /* label text softer white */
+}
+
+form input,
+form textarea {
+  background: rgba(255, 255, 255, 0.15); /* light glass input */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #d7d6d6; /* input text soft white */
+}
+
+/* FAQ SECTION */
+.faq-header h2 {
+  color: #d7d6d6; /* header soft white */
+}
+
+.faq-item {
+  color: #e8e8e8; /* question text soft white */
+}
+
+.faq-answer {
+  color: #f5f5f5; /* answer text soft white */
+}
+
+.faq-answer h3 {
+  color: #ffb86c; /* highlight in answer */
+}
+
+/* BUTTON TEXT */
+.submit-btn {
+  color: #f5f5f5; /* soft white button text */
+}

@@ -1,0 +1,66 @@
+<section class="model-intro">
+  <div class="intro-container">
+    <button class="button" data-text="Loved">
+      <span class="actual-text">&nbsp;What Our Loyal Customers Say&nbsp;</span>
+      <span aria-hidden="true" class="front-text">&nbsp;What Our Loyal Customers Say&nbsp;</span>
+    </button>
+
+   <p class="btn-shine">
+  Hear from our loyal customers and see what they love about the glow and quality Phka Blush brings.
+</p>
+
+  </div>
+</section>
+
+
+    <div class="testimonials-section">
+    <div class="container">
+        
+        <div class="testimonials-container">
+        <div class="testimonial-card"
+            *ngFor="let testimonial of visibleTestimonials; let i = index"
+            [class.active]="i === 1"
+            [style.z-index]="getZIndex(i)"
+            [style.transform]="getTransform(i)"
+            (click)="setActiveCard(i)"
+            >
+            <div class="card-content">
+            <img [src]="testimonial.image" [alt]="testimonial.name" class="customer-image">
+            <div class="testimonial-info">
+                <div class="header-row">
+                <div>
+                    <h3 class="customer-name">{{ testimonial.name }}</h3>
+                    <p class="review-date">{{ testimonial.date }}</p>
+                </div>
+                <div class="rating">
+                    <span *ngFor="let star of [1,2,3,4,5]" class="star">⭐</span>
+                </div>
+                </div>
+                <p class="review-text" *ngIf="i === 1">
+                {{ testimonial.review }}
+                </p>
+
+                <div class="audio-player" *ngIf="i === 1">
+                <button class="play-btn" (click)="togglePlay()">
+                    <span *ngIf="!isPlaying">▶</span>
+                    <span *ngIf="isPlaying">⏸</span>
+                </button>
+                <div class="waveform">
+                    <div class="wave-bar" *ngFor="let bar of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"></div>
+                </div>
+                <span class="audio-time">{{ testimonial.audioTime }}</span>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="navigation-dots">
+        <button *ngFor="let testimonial of testimonials; let i = index"
+                class="dot"
+                [class.active]="i === currentIndex"
+                (click)="goToTestimonial(i)">
+        </button>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,370 @@
+/* Host element - prevents overflow */
+:host {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background effects */
+.background-container {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: #000;
+  pointer-events: none;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(109, 40, 217, 0.2), rgba(112, 26, 117, 0.2), rgba(162, 28, 175, 0.2));
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(96px);
+}
+
+.orb-1 {
+  top: 25%;
+  left: 25%;
+  width: 384px;
+  height: 384px;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.orb-2 {
+  bottom: 25%;
+  right: 25%;
+  width: 384px;
+  height: 384px;
+  background: rgba(217, 70, 239, 0.1);
+}
+
+@media (max-width: 640px) {
+  .orb-1, .orb-2 {
+    width: 192px;
+    height: 192px;
+  }
+}
+
+/* Main container */
+.carousel-wrapper {
+    margin-top: 130px;
+  padding: 0;      /* remove default top/bottom padding */
+  min-height: auto; /* prevent extra empty height */
+  display: flex;
+  flex-direction: column; /* stack carousel + marquee */
+  align-items: center;
+  justify-content: flex-start; /* align to top */
+}
+
+
+/* Carousel container */
+.carousel-container {
+  perspective: 1000px;
+  touch-action: pan-y pinch-zoom;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+    margin-bottom: 0; /* no extra bottom spacing */
+
+}
+
+/* Progress bar */
+.progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(to right, rgba(139, 92, 246, 1), rgba(217, 70, 239, 1));
+  transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Navigation buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-prev {
+  left: 0.5rem;
+}
+
+.nav-next {
+  right: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .nav-button {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .nav-prev {
+    left: 1rem;
+  }
+  
+  .nav-next {
+    right: 1rem;
+  }
+}
+
+@media (hover: hover) {
+  .nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+.nav-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 640px) {
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Carousel track */
+.carousel-track {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .carousel-track {
+    height: 500px;
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel-track {
+    height: 600px;
+  }
+}
+
+/* Carousel items */
+.carousel-item {
+  backface-visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+}
+
+@media (max-width: 640px) {
+  .carousel-item.prev {
+    opacity: 0;
+    transform: scale(0.8) translateX(-50%) translateZ(-100px);
+  }
+
+  .carousel-item.next {
+    opacity: 0;
+    transform: scale(0.8) translateX(50%) translateZ(-100px);
+  }
+}
+
+@media (min-width: 641px) {
+  .carousel-item.prev {
+    opacity: 0.7;
+    transform: scale(0.9) translateX(-100%) translateZ(-100px);
+  }
+
+  .carousel-item.next {
+    opacity: 0.7;
+    transform: scale(0.9) translateX(100%) translateZ(-100px);
+  }
+}
+
+.carousel-item.hidden {
+  opacity: 0;
+  transform: scale(0.8) translateZ(-200px);
+}
+
+.slide-padding {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .slide-padding {
+    padding: 2rem;
+  }
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .slide-content {
+    border-radius: 16px;
+  }
+}
+
+.slide-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+  
+}
+
+.slide-content:hover .slide-image {
+  transform: scale(1.1);
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: overlay;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+}
+
+@media (min-width: 640px) {
+  .slide-caption {
+    padding: 2rem;
+  }
+}
+
+.slide-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .slide-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-title {
+    font-size: 1.875rem;
+  }
+}
+
+.slide-description {
+  color: rgb(229, 229, 229);
+  font-size: 0.875rem;
+  max-width: 48rem;
+}
+
+@media (min-width: 640px) {
+  .slide-description {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-description {
+    font-size: 1.125rem;
+  }
+}
+
+/* Indicators */
+.indicators-container {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.25rem;
+  z-index: 20;
+}
+
+@media (min-width: 640px) {
+  .indicators-container {
+    bottom: 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.indicator {
+  width: 32px;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+@media (min-width: 640px) {
+  .indicator {
+    width: 48px;
+    height: 6px;
+  }
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.indicator.active {
+  background: rgba(255, 255, 255, 0.4);
+}

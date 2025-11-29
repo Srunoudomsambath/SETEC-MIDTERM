@@ -1,0 +1,135 @@
+.footer {
+  border-radius: 20px;
+  backdrop-filter: blur(15px); /* blur the background behind */
+  -webkit-backdrop-filter: blur(15px); /* for Safari */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); 
+  transition: all 0.5s ease;
+  color: white;
+  padding: 60px 0 40px;
+    
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      box-sizing: border-box;
+      transition: all 0.5s ease-in-out;
+      z-index: 50;
+}
+
+.footer-wrapper {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 110px;
+}
+
+.footer-left {
+  width: 33%;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  transition: 0.3s;
+}
+
+.footer-social img:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* RIGHT SIDE */
+.footer-right {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.footer-section ul li a {
+  color: white;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #FF6B17;
+  text-decoration: underline;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  max-width: 200px;
+}
+
+.footer-brand {
+  width: 150px;
+  margin-top: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.icon-item svg {
+  flex-shrink: 0;
+}

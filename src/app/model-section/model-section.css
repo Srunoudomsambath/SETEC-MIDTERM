@@ -1,0 +1,437 @@
+.model-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* mobile: 2 columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .model-section {
+    grid-template-columns: repeat(4, 1fr); /* desktop: 4 columns */
+  }
+}
+
+/* Each column */
+.column {
+  display: grid;
+  gap: 20px;
+}
+
+/* Images styling */
+.column img {
+    width: 100%;
+  height: 100%;
+  object-fit: cover;   /* VERY IMPORTANT */
+  border-radius: 12px;
+  display: block;
+  transition: 0.3s ease-in-out;
+}
+
+
+/* Hover effects */
+.column img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+.model-intro {
+  text-align: center;
+  margin: 60px 0 40px 0;
+  padding: 0 20px;
+  color: white;
+}
+
+.model-intro h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #5c039b, #cb9af9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.model-intro p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* From Uiverse.io by SelfMadeSystem */ 
+.container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation:
+    after-anim-opacity 5s linear infinite,
+    weee 10s linear infinite;
+  background-repeat: repeat-y;
+  background-size:
+    50px 20px,
+    50px 20px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px;
+  background-position-x: 4px, 54px, calc(var(--w) * 1 + 4px),
+    calc(var(--w) * 1 + 54px), calc(var(--w) * 2 + 4px),
+    calc(var(--w) * 2 + 54px), calc(var(--w) * 3 + 4px),
+    calc(var(--w) * 3 + 54px), calc(var(--w) * 4 + 4px),
+    calc(var(--w) * 4 + 54px);
+  background-image: none, none,
+    linear-gradient(
+      45deg,
+      var(--c) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--c) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--c) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--c) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    none, none,
+    linear-gradient(
+      45deg,
+      var(--c) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--c) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--c) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--c) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    );
+}
+
+@keyframes after-anim-opacity {
+  5% {
+    opacity: 1;
+  }
+  0%,
+  4.99%,
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation:
+    before-anim-opacity 5s linear infinite,
+    before-anim-bg 5s step-start infinite,
+    weee 10s linear infinite;
+  background-repeat: repeat-y;
+  background-size:
+    50px 20px,
+    50px 20px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px;
+  background-position-x: 4px, 54px, calc(var(--w) * 1 + 4px),
+    calc(var(--w) * 1 + 54px), calc(var(--w) * 2 + 4px),
+    calc(var(--w) * 2 + 54px), calc(var(--w) * 3 + 4px),
+    calc(var(--w) * 3 + 54px), calc(var(--w) * 4 + 4px),
+    calc(var(--w) * 4 + 54px);
+}
+
+@keyframes before-anim-opacity {
+  0%,
+  10.4% {
+    opacity: 1;
+  }
+  9.9%,
+  10.3999%,
+  30%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes before-anim-bg {
+  0%,
+  9.9%,
+  99% {
+    background-image: none, none, none, none,
+      linear-gradient(
+        45deg,
+        var(--c) 0% 30.76923076923077%,
+        transparent 30.76923076923077% 61.53846153846154%,
+        var(--c) 61.53846153846154% 92.3076923076923%,
+        transparent 92.3076923076923%
+      ),
+      linear-gradient(
+        -45deg,
+        var(--c) 0% 30.76923076923077%,
+        transparent 30.76923076923077% 61.53846153846154%,
+        var(--c) 61.53846153846154% 92.3076923076923%,
+        transparent 92.3076923076923%
+      );
+  }
+  10%,
+  40% {
+    background-image: linear-gradient(
+        45deg,
+        var(--c) 0% 14.285714285714285%,
+        transparent 14.285714285714285% 28.57142857142857%,
+        var(--c) 28.57142857142857% 42.857142857142854%,
+        transparent 42.857142857142854% 57.14285714285714%,
+        var(--c) 57.14285714285714% 71.42857142857142%,
+        transparent 71.42857142857142% 85.71428571428571%,
+        var(--c) 85.71428571428571% 100%
+      ),
+      linear-gradient(
+        -45deg,
+        var(--c) 0% 14.285714285714285%,
+        transparent 14.285714285714285% 28.57142857142857%,
+        var(--c) 28.57142857142857% 42.857142857142854%,
+        transparent 42.857142857142854% 57.14285714285714%,
+        var(--c) 57.14285714285714% 71.42857142857142%,
+        transparent 71.42857142857142% 85.71428571428571%,
+        var(--c) 85.71428571428571% 100%
+      ),
+      none, none, none, none, none, none,
+      linear-gradient(
+        45deg,
+        var(--c) 0% 14.285714285714285%,
+        transparent 14.285714285714285% 28.57142857142857%,
+        var(--c) 28.57142857142857% 42.857142857142854%,
+        transparent 42.857142857142854% 57.14285714285714%,
+        var(--c) 57.14285714285714% 71.42857142857142%,
+        transparent 71.42857142857142% 85.71428571428571%,
+        var(--c) 85.71428571428571% 100%
+      ),
+      linear-gradient(
+        -45deg,
+        var(--c) 0% 14.285714285714285%,
+        transparent 14.285714285714285% 28.57142857142857%,
+        var(--c) 28.57142857142857% 42.857142857142854%,
+        transparent 42.857142857142854% 57.14285714285714%,
+        var(--c) 57.14285714285714% 71.42857142857142%,
+        transparent 71.42857142857142% 85.71428571428571%,
+        var(--c) 85.71428571428571% 100%
+      );
+  }
+}
+
+.container {
+  position: absolute;
+  outline: 40em solid var(--b);
+  width: calc(var(--w) * 5 + 4px);
+  height: 100%;
+  --l: #25ec77;
+  --b: #252a29;
+  --c: #fffdfd;
+  animation: weee 10s linear infinite;
+  background: var(--b);
+  background-image: linear-gradient(
+      45deg,
+      var(--l) 0% 14.285714285714285%,
+      transparent 14.285714285714285% 28.57142857142857%,
+      var(--l) 28.57142857142857% 42.857142857142854%,
+      transparent 42.857142857142854% 57.14285714285714%,
+      var(--l) 57.14285714285714% 71.42857142857142%,
+      transparent 71.42857142857142% 85.71428571428571%,
+      var(--l) 85.71428571428571% 100%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--l) 0% 14.285714285714285%,
+      transparent 14.285714285714285% 28.57142857142857%,
+      var(--l) 28.57142857142857% 42.857142857142854%,
+      transparent 42.857142857142854% 57.14285714285714%,
+      var(--l) 57.14285714285714% 71.42857142857142%,
+      transparent 71.42857142857142% 85.71428571428571%,
+      var(--l) 85.71428571428571% 100%
+    ),
+    linear-gradient(
+      45deg,
+      var(--l) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--l) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--l) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--l) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      45deg,
+      var(--l) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--l) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--l) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--l) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      45deg,
+      var(--l) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--l) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--l) 0% 30.76923076923077%,
+      transparent 30.76923076923077% 61.53846153846154%,
+      var(--l) 61.53846153846154% 92.3076923076923%,
+      transparent 92.3076923076923%
+    ),
+    linear-gradient(
+      45deg,
+      var(--l) 0% 14.285714285714285%,
+      transparent 14.285714285714285% 28.57142857142857%,
+      var(--l) 28.57142857142857% 42.857142857142854%,
+      transparent 42.857142857142854% 57.14285714285714%,
+      var(--l) 57.14285714285714% 71.42857142857142%,
+      transparent 71.42857142857142% 85.71428571428571%,
+      var(--l) 85.71428571428571% 100%
+    ),
+    linear-gradient(
+      -45deg,
+      var(--l) 0% 14.285714285714285%,
+      transparent 14.285714285714285% 28.57142857142857%,
+      var(--l) 28.57142857142857% 42.857142857142854%,
+      transparent 42.857142857142854% 57.14285714285714%,
+      var(--l) 57.14285714285714% 71.42857142857142%,
+      transparent 71.42857142857142% 85.71428571428571%,
+      var(--l) 85.71428571428571% 100%
+    );
+  background-size:
+    50px 20px,
+    50px 20px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px,
+    50px 80px;
+  --w: 104px;
+  background-position-x: 4px, 54px, calc(var(--w) * 1 + 4px),
+    calc(var(--w) * 1 + 54px), calc(var(--w) * 2 + 4px),
+    calc(var(--w) * 2 + 54px), calc(var(--w) * 3 + 4px),
+    calc(var(--w) * 3 + 54px), calc(var(--w) * 4 + 4px),
+    calc(var(--w) * 4 + 54px);
+  background-repeat: repeat-y;
+}
+
+@keyframes weee {
+  to {
+    background-position-y: 800px, 800px, 1040px, 1040px, 1360px, 1360px, 1040px,
+      1040px;
+  }
+}
+
+
+.button {
+  position: relative;
+  border: none;
+  background: transparent;
+  --stroke-color: #ffffff7c;
+  --ani-color: rgba(95, 3, 244, 0);
+  --color-gar: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  letter-spacing: 3px;
+
+    font-family: "Poppins";
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--stroke-color);
+  cursor: pointer;
+}
+
+.front-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Always full width */
+  background: var(--color-gar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200%;
+  overflow: hidden;
+  animation: ani 8s linear infinite; /* Keep animating */
+  border-bottom: 2px solid transparent;
+}
+
+/* Optional: keep hover effect for stroke/border */
+.button:hover .front-text {
+  -webkit-text-stroke: 1px var(--ani-color);
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 400%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+
+.btn-shine {
+  display: inline-block;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  background: linear-gradient(90deg, #9f9f9f 0%, #fff 50%, #868686 100%);
+  background-size: 200% auto;  /* Double width for smooth sweep */
+  background-position: -200% 0;  /* Start from left outside */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 8s infinite linear;
+
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 10px;
+  white-space: normal;
+  max-width: 700px;  /* Constrain width to match your design */
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center everything */
+  gap: 20px;            /* space between button and paragraph */
+  width: 100%;          /* make full width */
+}
+ 
